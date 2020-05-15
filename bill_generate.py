@@ -10,7 +10,7 @@ def cal():
     #print("Incorrect Product Code.")
     raise worngproductcode
   else:
-    quan=int(input("Quantity - "))
+    quan=float(input("Quantity in Kg- "))
     iprice=price[id]*quan
     print("Initial Price -",iprice)
     dprice=int(iprice/100*disc[id])
