@@ -24,7 +24,7 @@ allitems=[]
 while n!='N':
   try:
     con=input("Do you want to Buy anything - ")
-    if con.upper()=='Y':
+    if con.upper()=='Y' or len(con)==0:
       a,b,c,d,e=cal()      
       allitems.append(a)
       allitems.append(b)
@@ -46,19 +46,21 @@ total=0
 total_dis=0
 total_price=0
 l=int(len(allitems)/5);
-print("Product         Quantity    Price   Discount   Final Amt")
-print("--------------------------------------------------------")
-for i in range(0,l):
-  print(allitems[pn].ljust(14," "),"    ",str(allitems[pquan]).ljust(3," "),"   ",str(allitems[pprice]).ljust(5," "),"   ",str(allitems[pdprice]).ljust(6," "),"    ",allitems[pfprice])
-  total_price=total_price+allitems[pprice]
-  total_dis=total_dis+allitems[pdprice]
-  total=total+allitems[pfprice]
-  
-  pn=pn+5
-  pquan=pquan+5
-  pprice=pprice+5
-  pdprice=pdprice+5
-  pfprice=pfprice+5
+print(" ")
+if len(allitems)!=0:
+  print("Product         Quantity    Price   Discount   Final Amt")
   print("--------------------------------------------------------")
-print("Total Bill  \t\t\t   ",total_price,"     ",total_dis,"\t\t ",total)
+  for i in range(0,l):
+    print(allitems[pn].ljust(14," "),"    ",str(allitems[pquan]).ljust(3," "),"   ",str(allitems[pprice]).ljust(5," "),"   ",str(allitems[pdprice]).ljust(6," "),"    ",allitems[pfprice])
+    total_price=total_price+allitems[pprice]
+    total_dis=total_dis+allitems[pdprice]
+    total=total+allitems[pfprice]
+
+    pn=pn+5
+    pquan=pquan+5
+    pprice=pprice+5
+    pdprice=pdprice+5
+    pfprice=pfprice+5
+    print("--------------------------------------------------------")
+  print("Total Bill  \t\t\t   ",total_price,"   ",total_dis,"\t\t ",total)
 print("---------------- Thank You Visit Again -----------------")
