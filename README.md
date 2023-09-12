@@ -1,2 +1,2 @@
 # python
-# these are the python exersize which i practiced.
+# these are the python exersize
